@@ -1,9 +1,10 @@
 import React from 'react'
-import 
 
 function News() {
   return (
-    <div>News
+    <div>
+
+<div>
 
 <div class="card" style={{width: '18rem'}}>
   <img src="..." class="card-img-top" alt="..."/>
@@ -14,6 +15,11 @@ function News() {
   </div>
 </div>
 
+
+
+
+
+    </div>
 
 
 

@@ -2,12 +2,27 @@
   text-align: center;
 }
 
-.left{
-   background-color: #61dafb;
-   height: 100px;
-   width: 100px;
-   align-items: flex-start;
+.mainheading {
+  margin-top: 50px;
+  font-size: 4em;
+  margin-left: 50px;
+  display:flex;
 }
+
+
+.image{
+  display: flex;
+  float: right;
+  margin-top: 10px;
+}
+
+.shortheading {
+  font-size: 2em;
+  margin-top: 10px; /* Adjust the margin-top value as needed */
+  margin-left: 50px;
+  display: flex;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
