@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
 import News from './Components/News';
+import Newsfetcher from './Components/Newsfetcher';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Navbar/>
       <Header/>
       <News/>
-      
+   
     </div>
   );
 }

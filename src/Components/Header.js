@@ -10,7 +10,7 @@ function Header() {
          
           <div className='shortheading'>Your Companinon at bad times</div>
 
-          <div className='image'><img src ='./images/doc.gif'/ ></div>
+          
        
          
            
