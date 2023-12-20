@@ -17,7 +17,7 @@ class News extends Component {
       let parsedData = await data.json();
       console.log(parsedData);
       // Limit the number of articles to 4
-      this.setState({ articles: parsedData.articles.slice(0, 4) });
+      this.setState({ articles: parsedData.articles.slice(0, 8) });
     } catch (error) {
       console.error('Error fetching news:', error);
     }

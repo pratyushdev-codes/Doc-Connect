@@ -11,7 +11,7 @@ export class Newsfetcher extends Component {
 
       <div className="my-3 mx-auto   text-white align= center">
 
-        <div className="card " style={{height:"30rem", width:"18rem", borderRadius:"20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
+        <div className="card " style={{height:"25rem", width:"18rem", borderRadius:"20px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
         <span class="position-absolute top-0  translate-middle badge rounded-pill bg-danger" style ={{left:'90%', zIndex:'1'}}>
               {source}
 
@@ -21,9 +21,9 @@ export class Newsfetcher extends Component {
             <h5 className="card-title">{title} </h5>
             <p className="card-text">{description} </p>
 
-            <p class="card-text text-grey"><small class="text">By {!author ? "Unknown" : author} on {new Date(date).toGMTString()}</small></p>
+          
 
-            <a rel="noreferrer" href={url} target="_blank" className="btn btn-sm btn-dark" style={{borderRadius:"20px", backgroundColor:"blue" , borderColor:"white", bordderRadius:"20px" , boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>Read More</a>
+            {/* <a rel="noreferrer" href={url} target="_blank" className="btn btn-sm btn-dark" style={{borderRadius:"20px", backgroundColor:"blue" , borderColor:"white", bordderRadius:"20px" , boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>Read More</a> */}
 
           </div>
         </div>
