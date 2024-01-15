@@ -10,15 +10,20 @@ const UserSchema= new Schema({
 password:{
     type:String,
     required:true
+
+},
+
+email:{
+    type:String,
+    required: true,
+    unique:true,
+},
+date:{
+    type: Date,
+    default:Date.now,
 }
-
-email
-
-
-
-
-
-
 
   }
 );
+
+module.exports= mongoose.model('user', UserSchema);
