@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs'); // Corrected the spelling
+const JWT_SECRET='websiteadminpratyush';
+const jwt = require('jsonwebtokens');
 
 // Create user using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
@@ -22,11 +25,25 @@ router.post('/createuser', [
     }
 
     try {
+        const salt = await bcrypt.genSalt(10); // Corrected the spelling
+        const secPass = await bcrypt.hash(req.body.password, salt); // Corrected the spelling
         user = await User.create({
             name: req.body.name,
-            password: req.body.password,
+            password: secPass,
             email: req.body.email,
         });
+ const data ={
+    user:{
+        id:user.id
+    }
+ }
+        const jwtData = jwt.sign(data, JWT_SECRET);
+        console.log(jwtData);
+        res.json(user);
+
+
+
+
         res.json(user);
     } catch (err) {
         console.error(err);
