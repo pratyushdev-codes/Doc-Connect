@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const JWT_SECRET = 'websiteadminpratyush';
 const jwt = require('jsonwebtoken');
 
-// Create user using: POST "/api/auth/createuser". No login required
+// ROUTE 1: Create user using: POST "/api/auth/createuser". No login required
 router.post('/createuser', [
     body('name', 'Enter a valid name').isLength({ min: 3 }),
     body('email', 'Enter a valid Email').isEmail(),
@@ -48,7 +48,7 @@ router.post('/createuser', [
     }
 });
 
-// Authenticate a user
+// ROUTE 2: Authenticate a user | Login Creds
 router.post('/login', [
     body('email', 'Enter a valid Email').isEmail(),
     body('password', 'Password cannot be blank').exists(),
@@ -85,5 +85,28 @@ router.post('/login', [
         res.status(500).send("Internal Server Occurred");
     }
 });
+
+// ROUTE 3: Get logged in user Details using: POST "/api/auth/getuser". Login Required
+
+
+router.post('/login', [
+    body('email', 'Enter a valid Email').isEmail(),
+    body('password', 'Password cannot be blank').exists(),
+], async (req, res) => {
+
+try {
+    userId="todo"
+    const user = await User.findById(userId).select("password");
+
+
+    
+} catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Occurred");
+    
+}
+
+
+
 
 module.exports = router;
